@@ -8,6 +8,7 @@ game.o: game.h game.cpp
 
 cangaco: cangaco.cpp $(OBJS)
 	g++ cangaco.cpp $(OBJS) -o ../bin/cangaco -lallegro -lallegro_main -lallegro_primitives -lallegro_ttf -lallegro_font
+	rm -fr ../bin/fonts
 	cp -a ../fonts ../bin/
 
 clean:
