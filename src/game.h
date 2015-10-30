@@ -2,10 +2,12 @@
 #define _GAME_H_
 
 #include <iostream>
+#include <list>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
+#include "scene.h"
 
 class Game {
 private:
@@ -16,6 +18,8 @@ private:
 	ALLEGRO_TIMER *main_timer;
 	ALLEGRO_EVENT_QUEUE *main_event_queue;
 	int width, height; // display width and height
+	std::vector<Scene *> scenes;
+	Scene *current_scene;
 
 	void Update();
 
