@@ -9,6 +9,8 @@
 #include <allegro5/allegro_ttf.h>
 #include "scene.h"
 
+class Scene;
+
 class Game {
 private:
 	bool finalized;
@@ -18,7 +20,7 @@ private:
 	ALLEGRO_TIMER *main_timer;
 	ALLEGRO_EVENT_QUEUE *main_event_queue;
 	int width, height; // display width and height
-	std::vector<Scene *> scenes;
+	std::list<Scene *> scenes;
 	Scene *current_scene;
 
 	void Update();

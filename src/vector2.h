@@ -5,6 +5,8 @@ class Vector2 {
 public:
 	double x, y;
 	Vector2();
+
+	static double Distance(Vector2 &v1, Vector2 &v2);
 };
 
 #endif

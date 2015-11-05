@@ -9,6 +9,7 @@ Game::Game(int width, int height, double fps) {
 	this->height = height;
 	this->fps = fps;
 	this->finalized = false;
+	this->current_scene = NULL;
 }
 
 Game::~Game() {
@@ -18,19 +19,25 @@ Game::~Game() {
 
 
 void Game::Update() {
-
+	if (this->current_scene != NULL) {
+		//this->current_scene->Update();
+	}
 }
 
 void Game::Draw() {
 	al_clear_to_color(al_map_rgb(255, 255, 255));
 
+	if (this->current_scene != NULL) {
+		//this->current_scene->Draw();
+		
+	}
 	al_draw_text(this->title_font, al_map_rgb(150, 0, 0), this->width/2, (this->height/2) - 50, ALLEGRO_ALIGN_CENTER, "Cangaço");
-
+	
 	al_flip_display();
 }
 
 bool Game::IsFinalized() {
-
+	return this->finalized;
 }
 
 
